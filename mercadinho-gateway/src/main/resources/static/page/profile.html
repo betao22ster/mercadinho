@@ -1,0 +1,85 @@
+
+
+		<div class="row"   ng-controller="perfilUsuario">
+		
+			<div class="col-lg-4">
+				<div class="hpanel hgreen">
+					<div class="panel-body">
+						<div class="pull-right text-right">
+							<div class="btn-group">
+								<a ng-href="{{perfilUsuario.perfilFacebook}}" ng-show="{{perfilUsuario.perfilFacebook != null}}" target="_blank"><i class="fa fa-facebook btn btn-default btn-xs"></i></a>
+							</div>
+						</div>
+						<img alt="logo" class="img-circle m-b m-t-md" ng-src="{{perfilUsuario.foto}}">
+						<h3>
+							<a href="">{{perfilUsuario.nome}}</a>
+						</h3>
+						
+						<div class="text-muted font-bold m-b-xs">California, LA</div>
+						
+							
+					</div>
+					
+					<div class="border-right border-left">
+					</div>
+					
+					<div class="panel-body">
+						<dl>
+							<dt>E-mail</dt>
+							<dd>{{perfilUsuario.email}}</dd>
+						</dl>
+					</div>
+	<br>
+					<div class="panel-footer contact-footer">
+					
+		                <div class="row">
+			                <form role="form" name="form_facebook" action="{{linkFace}}" method="post" novalidate ng-submit="carregarDados()">
+			                	
+	  							<input type="hidden" id="csrftoken_" name="{{parameterName}}" value="{{token}}" /> 
+	  
+								<button class="btn btn-sm btn-primary" type="submit" ng-click="dadosFacebook()"><strong>Carregar dados do facebook</strong></button>
+								<br><label>(Nome, E-Mail e foto do perfil)</label>
+							</form>
+						</div>
+					</div>
+									
+				</div>
+			</div>
+
+			<div class="col-lg-8">
+				<div class="hpanel">
+					<div class="hpanel">
+		                Alterar dados
+		            </div>
+
+		            <div class="panel-body">
+
+		                <form role="form" name="signup_form" novalidate ng-submit="gravar()">
+
+		                    <div class="form-group"><label>Nome</label>
+		                        <input type="nome" placeholder="Nome" class="form-control" name="nome" ng-model="perfilUsuario.nome" required >
+		                        <div class="m-t-xs" ng-show="signup_form.nome.$invalid">
+		                            <span class="text-danger" ng-show="signup_form.nome.$error"><i class="fa fa-exclamation-triangle"></i></span>
+		                        </div>
+		                    </div>
+
+		                    <div class="form-group"><label>E-mail</label>
+		                        <input type="email" placeholder="Digite o e-mail" class="form-control" required name="email" ng-model="perfilUsuario.email" ng-blur="blurEmail($event)">
+		                        <div class="m-t-xs" ng-show="signup_form.email.$invalid">
+		                            <span class="text-danger" ng-show="signup_form.email.$error"><i class="fa fa-exclamation-triangle"></i>Porfavor, adicione um e-mail válido.</span>
+		                        </div>
+		                    </div>
+		                    <div>
+		                        <button class="btn btn-sm btn-primary" type="submit"><strong>Alterar</strong></button>
+		                    </div>
+		                </form>
+		
+		            </div>
+		            
+		            
+		        </div>
+		    </div>
+		
+		
+		</div>
+

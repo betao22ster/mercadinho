@@ -1,0 +1,96 @@
+
+
+<div class="row" ng-controller="listaComprascad">
+
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="hpanel">
+
+				<div class="panel-body float-e-margins">
+
+					<p>
+						<button class="btn btn-primary" type="button"
+							ui-sref="app_views.listacompras">
+							<i class="fa fa-angle-left"></i><br />Voltar
+						</button>
+						<button class="btn btn-primary" type="button" ng-click="novo()">
+							<i class="fa fa-file-o"></i> <br />Novo
+						</button>
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="col-lg-8">
+
+		<div class="hpanel">
+			<div class="hpanel">
+				<form role="form" name="signup_form" novalidate ng-submit="gravar()">
+					<div class="panel-body">
+
+						<div class="form-group">
+							<label>Nome da Lista</label> <input type="nome"
+								placeholder="Nome da lista" class="form-control" name="nome"
+								ng-model="lista.nome" required>
+							<div class="m-t-xs"
+								ng-show="signup_form.nome.$invalid && signup_form.submitted">
+								<span class="text-danger" ng-show="signup_form.nome.$error"><i
+									class="fa fa-exclamation-triangle">Digite o nome da lista</i></span>
+							</div>
+						</div>
+
+						<div>
+							<button class="btn btn-sm btn-primary" type="submit">
+								<strong>Gravar</strong>
+							</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-8" ng-show="lista.id != null">
+		<div class="hpanel">
+			<div class="hpanel">
+
+				<div class="panel-heading">
+					<strong>Adicionar Produto</strong><br>
+					<div class="input-group">
+					
+						<div class="input-group-btn">
+						<ui-select ng-model="prodSel" theme="bootstrap" ng-disabled="disabled" ng-change="selCroduto({{$select.selected}})">
+		                    <ui-select-match placeholder="Selecione um produto">{{$select.selected.name}}</ui-select-match>
+		                    <ui-select-choices repeat="item in listaProduto">
+		                        <div ng-bind-html="item.nome | highlight: $select.search"></div>
+		                    </ui-select-choices>
+		                </ui-select>
+                
+						</div>
+					</div>
+				</div>
+
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th width="100%">Nome</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in listaProdutoSel">
+							<td>{{item.nome}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+

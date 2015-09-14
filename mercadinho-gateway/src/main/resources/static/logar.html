@@ -1,0 +1,43 @@
+<div class="color-line"></div>
+
+<div ng-controller="navigation" >
+<div class="login-container" ng-app="gateway"  ng-show="!authenticated">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>Mariazinha</h3>
+                <small>Faça o login por favor!</small>
+            </div>
+            <div class="hpanel">
+                <div class="panel-body">
+                        <form ng-submit="login()" id="loginForm" role="form">
+                            <div class="form-group">
+                                <label class="control-label" for="username">Usuário</label>
+                                <input type="text" placeholder="example@gmail.com" title="Digite seu usuário" required="" value="" name="username" id="username" class="form-control" ng-model="credentials.username">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Senha</label>
+                                <input type="password" title="Digite sua senha" placeholder="******" required="" value="" name="password" id="password" class="form-control" ng-model="credentials.password">
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block">Entrar</button>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <strong>Mercadinho</strong>
+        </div>
+    </div>
+    
+</div>
+
+	<div class="container" ng-show="authenticated">
+		<!-- <a class="btn btn-primary" href="/ui/">Go To User Interface</a> -->
+		Seja Bem vindo, aguarde....
+	</div>
+	
+</div>

@@ -1,0 +1,68 @@
+
+<div class="row" ng-controller="produtos">
+
+
+
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="hpanel">
+
+				<div class="panel-body float-e-margins">
+					<p>
+						<button class="btn btn-primary" type="button"
+							ui-sref="app_views.produtoscad">
+							<i class="fa fa-file-o"></i> <br />Novo
+						</button>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-lg-12">
+
+			<div class="panel-heading">Lista de Produtos</div>
+
+			<div class="col-md-9">
+
+
+				<div class="hpanel hgreen" ng-repeat="item in listaProduto">
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-8">
+								<h4>
+									<a href="">{{item.nome}}</a>
+								</h4>
+							</div>
+							<div class="col-sm-4 project-info">
+								<div class="project-action m-t-md">
+									<div class="btn-group">
+
+										<button class="btn btn-xs btn-default"
+											ui-sref="app_views.produtoscad({produto:{{item}} })">Alterar</button>
+										<button class="btn btn-xs btn-default"
+											ng-click="excluir(item)">Excluir</button>
+									</div>
+
+									<div class="project-value">
+										<h2 class="text-success">R$ {{item.valor == null ? '0.00'
+											: item.valor}}</h2>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+</div>

@@ -1,0 +1,11 @@
+logging:
+  level:
+    org.springframework.security: DEBUG
+security:
+  sessions: ALWAYS
+zuul:
+  routes:
+    template:
+      url: http://localhost:8082
+    servico:
+      url: http://localhost:8081
