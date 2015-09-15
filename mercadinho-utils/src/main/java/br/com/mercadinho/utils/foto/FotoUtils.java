@@ -8,6 +8,8 @@ public class FotoUtils {
 	public static final String PASTA_UPLOAD = "pasta.upload";
 	private static final String MINI = "mini_";
 	private static final String FORMAT = "ddmmyyyyhhmmss";
+	public static final String EXTENSAO = "jpg";
+	public static final int TAMANHO_MINIATURA = 50;
 	
 	private String nomeOriginal;
 	private String nomeArquivo;
