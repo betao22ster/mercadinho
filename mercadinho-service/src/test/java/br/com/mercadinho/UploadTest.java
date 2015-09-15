@@ -46,12 +46,16 @@ public class UploadTest {
 		host = "http://localhost:"	+ port;
 	}
 
+	/**
+	 * Para funcionar este teste precisa adicionar uma foto que tenha no computador
+	 * e que altere no arquivo application.properties a pasta na chave "pasta.upload"
+	 */
 	@Test
 	public void testA_uploadPost() {
 		
 		MultiValueMap<String, Object> parts = new LinkedMultiValueMap<String, Object>();
 		parts.add("id", "1");
-		parts.add("file", new FileSystemResource("/home/marcelo/Downloads/foto1.jpg"));
+		parts.add("file", new FileSystemResource("C:\\Users\\Mineiro\\Downloads\\foto1.jpg"));
 		
 		ResponseEntity<ProdutoJson> response = template.postForEntity(host + "/fotos/upload", parts, ProdutoJson.class);
 		assertEquals(HttpStatus.OK, response.getStatusCode());
